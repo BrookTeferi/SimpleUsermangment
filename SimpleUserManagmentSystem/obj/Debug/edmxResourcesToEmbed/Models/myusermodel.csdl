@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="userModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dateofbirth" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="userEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <FunctionImport Name="firstname_Search">
+      <Parameter Name="firstname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Fun_firstname_Search" EntitySet="USERS" ReturnType="Collection(userModel.USER)">
+      <Parameter Name="firstname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="dispalyalluser" />
+    <FunctionImport Name="dispalyallusers" />
+    <FunctionImport Name="displayallusers" EntitySet="USERS" ReturnType="Collection(userModel.USER)" />
+    <FunctionImport Name="allusers" />
+    <FunctionImport Name="GetUser">
+      <Parameter Name="firstname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="A" EntitySet="USERS" ReturnType="Collection(userModel.USER)">
+      <Parameter Name="firstname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_Usersearch">
+      <Parameter Name="nameer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Getcolumninformation" EntitySet="USERS" ReturnType="Collection(userModel.USER)">
+      <Parameter Name="nameer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_Usersearch1">
+      <Parameter Name="nameer" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
