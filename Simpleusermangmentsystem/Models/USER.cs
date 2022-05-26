@@ -11,7 +11,10 @@ namespace Simpleusermangmentsystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Configuration;
+    using System.Data.SqlClient;
+    using System.Text;
+
     public partial class USER
     {
         public int id { get; set; }
@@ -20,5 +23,10 @@ namespace Simpleusermangmentsystem.Models
         public string emailid { get; set; }
         public string address { get; set; }
         public Nullable<System.DateTime> dateofbirth { get; set; }
+
+
+
+
+        
     }
 }
